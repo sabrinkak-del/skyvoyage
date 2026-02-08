@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyVoyage | טיסות ומלונות לחו"ל</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-plane">✈</div>
+        <p>...SkyVoyage</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✈</span>
+                <span class="logo-text">Sky<span class="highlight">Voyage</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">ראשי</a></li>
+                <li><a href="#flights">טיסות</a></li>
+                <li><a href="#hotels">מלונות</a></li>
+                <li><a href="#deals">מבצעים</a></li>
+                <li><a href="#destinations">יעדים</a></li>
+                <li><a href="#reviews">חוות דעת</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline btn-sm">התחברות</button>
+                <button class="btn btn-primary btn-sm">הרשמה</button>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="floating-clouds">
+                <div class="cloud cloud-1">☁</div>
+                <div class="cloud cloud-2">☁</div>
+                <div class="cloud cloud-3">☁</div>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">🌍 יעדים מכל העולם</div>
+            <h1 class="hero-title">
+                <span class="line-1">גלו את העולם</span>
+                <span class="line-2">עם <span class="highlight-gradient">SkyVoyage</span></span>
+            </h1>
+            <p class="hero-subtitle">טיסות זולות, מלונות מפנקים ומבצעים שלא תמצאו בשום מקום אחר</p>
+
+            <!-- Search Tabs -->
+            <div class="search-box">
+                <div class="search-tabs">
+                    <button class="search-tab active" data-tab="flights">
+                        <i class="fas fa-plane"></i> טיסות
+                    </button>
+                    <button class="search-tab" data-tab="hotels">
+                        <i class="fas fa-hotel"></i> מלונות
+                    </button>
+                    <button class="search-tab" data-tab="packages">
+                        <i class="fas fa-suitcase-rolling"></i> חבילות
+                    </button>
+                </div>
+
+                <!-- Flights Search -->
+                <div class="search-panel active" id="flights-panel">
+                    <div class="search-options">
+                        <label class="radio-label"><input type="radio" name="trip" checked> הלוך חזור</label>
+                        <label class="radio-label"><input type="radio" name="trip"> כיוון אחד</label>
+                    </div>
+                    <div class="search-grid search-grid-flights">
+                        <div class="input-group">
+                            <label><i class="fas fa-plane-departure"></i> מוצא</label>
+                            <input type="text" placeholder="תל אביב (TLV)" value="תל אביב (TLV)">
+                        </div>
+                        <button class="swap-btn"><i class="fas fa-exchange-alt"></i></button>
+                        <div class="input-group">
+                            <label><i class="fas fa-plane-arrival"></i> יעד</label>
+                            <input type="text" placeholder="לאן טסים?">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-calendar"></i> תאריך יציאה</label>
+                            <input type="date">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-calendar"></i> תאריך חזרה</label>
+                            <input type="date">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-users"></i> נוסעים</label>
+                            <select>
+                                <option>1 מבוגר</option>
+                                <option>2 מבוגרים</option>
+                                <option>3 מבוגרים</option>
+                                <option>4 מבוגרים</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-gem"></i> מחלקה</label>
+                            <select>
+                                <option>תיירים</option>
+                                <option>עסקים</option>
+                                <option>ראשונה</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg search-btn">
+                        <i class="fas fa-search"></i> חפש טיסות
+                    </button>
+                </div>
+
+                <!-- Hotels Search -->
+                <div class="search-panel" id="hotels-panel">
+                    <div class="search-grid search-grid-hotels">
+                        <div class="input-group">
+                            <label><i class="fas fa-map-marker-alt"></i> יעד</label>
+                            <input type="text" placeholder="עיר, אזור או שם מלון">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-calendar"></i> צ'ק-אין</label>
+                            <input type="date">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-calendar"></i> צ'ק-אאוט</label>
+                            <input type="date">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-door-open"></i> חדרים</label>
+                            <select>
+                                <option>1 חדר</option>
+                                <option>2 חדרים</option>
+                                <option>3 חדרים</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-users"></i> אורחים</label>
+                            <select>
+                                <option>2 מבוגרים</option>
+                                <option>3 מבוגרים</option>
+                                <option>4 מבוגרים</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg search-btn">
+                        <i class="fas fa-search"></i> חפש מלונות
+                    </button>
+                </div>
+
+                <!-- Packages Search -->
+                <div class="search-panel" id="packages-panel">
+                    <div class="search-grid search-grid-packages">
+                        <div class="input-group">
+                            <label><i class="fas fa-plane-departure"></i> מוצא</label>
+                            <input type="text" placeholder="תל אביב (TLV)" value="תל אביב (TLV)">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-map-marker-alt"></i> יעד</label>
+                            <input type="text" placeholder="לאן נוסעים?">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-calendar"></i> תאריכים</label>
+                            <input type="date">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-moon"></i> לילות</label>
+                            <select>
+                                <option>3 לילות</option>
+                                <option>5 לילות</option>
+                                <option>7 לילות</option>
+                                <option>10 לילות</option>
+                                <option>14 לילות</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-users"></i> נוסעים</label>
+                            <select>
+                                <option>2 מבוגרים</option>
+                                <option>2 מבוגרים + 1 ילד</option>
+                                <option>2 מבוגרים + 2 ילדים</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg search-btn">
+                        <i class="fas fa-search"></i> חפש חבילות
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-number" data-target="1500">0</span>+ <span class="stat-label">יעדים</span></div>
+            <div class="stat"><span class="stat-number" data-target="200">0</span>+ <span class="stat-label">חברות תעופה</span></div>
+            <div class="stat"><span class="stat-number" data-target="50000">0</span>+ <span class="stat-label">מלונות</span></div>
+            <div class="stat"><span class="stat-number" data-target="98">0</span>% <span class="stat-label">שביעות רצון</span></div>
+        </div>
+    </section>
+
+    <!-- Deals Ticker -->
+    <section class="deals-ticker">
+        <div class="ticker-wrap">
+            <div class="ticker-content">
+                <span>🔥 רומא מ-$199 הלוך חזור</span>
+                <span>✈ ברצלונה מ-$249 כולל מזוודה</span>
+                <span>🏨 פריז – 3 לילות + טיסה מ-$599</span>
+                <span>🌴 תאילנד – שבוע מ-$899 הכל כלול</span>
+                <span>❄ לפלנד – חבילה משפחתית מ-$1,299</span>
+                <span>🔥 רומא מ-$199 הלוך חזור</span>
+                <span>✈ ברצלונה מ-$249 כולל מזוודה</span>
+                <span>🏨 פריז – 3 לילות + טיסה מ-$599</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="section destinations-section" id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">יעדים פופולריים</span>
+                <h2 class="section-title">לאן טסים היום?</h2>
+                <p class="section-subtitle">היעדים הכי חמים שנבחרו ע"י הנוסעים שלנו</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card destination-large" style="--bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                    <div class="destination-img">
+                        <div class="destination-placeholder">🗼</div>
+                    </div>
+                    <div class="destination-overlay">
+                        <span class="destination-tag">הכי פופולרי</span>
+                        <h3>פריז, צרפת</h3>
+                        <p>עיר האורות והרומנטיקה</p>
+                        <div class="destination-price">החל מ-<strong>$299</strong></div>
+                        <button class="btn btn-white btn-sm">הזמן עכשיו</button>
+                    </div>
+                </div>
+                <div class="destination-card" style="--bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+                    <div class="destination-img">
+                        <div class="destination-placeholder">🏛️</div>
+                    </div>
+                    <div class="destination-overlay">
+                        <h3>רומא, איטליה</h3>
+                        <div class="destination-price">החל מ-<strong>$199</strong></div>
+                        <button class="btn btn-white btn-sm">הזמן עכשיו</button>
+                    </div>
+                </div>
+                <div class="destination-card" style="--bg: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+                    <div class="destination-img">
+                        <div class="destination-placeholder">🏖️</div>
+                    </div>
+                    <div class="destination-overlay">
+                        <h3>ברצלונה, ספרד</h3>
+                        <div class="destination-price">החל מ-<strong>$249</strong></div>
+                        <button class="btn btn-white btn-sm">הזמן עכשיו</button>
+                    </div>
+                </div>
+                <div class="destination-card" style="--bg: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
+                    <div class="destination-img">
+                        <div class="destination-placeholder">🌴</div>
+                    </div>
+                    <div class="destination-overlay">
+                        <h3>בנגקוק, תאילנד</h3>
+                        <div class="destination-price">החל מ-<strong>$499</strong></div>
+                        <button class="btn btn-white btn-sm">הזמן עכשיו</button>
+                    </div>
+                </div>
+                <div class="destination-card" style="--bg: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
+                    <div class="destination-img">
+                        <div class="destination-placeholder">🗽</div>
+                    </div>
+                    <div class="destination-overlay">
+                        <h3>ניו יורק, ארה"ב</h3>
+                        <div class="destination-price">החל מ-<strong>$449</strong></div>
+                        <button class="btn btn-white btn-sm">הזמן עכשיו</button>
+                    </div>
+                </div>
+                <div class="destination-card" style="--bg: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)">
+                    <div class="destination-img">
+                        <div class="destination-placeholder">🏔️</div>
+                    </div>
+                    <div class="destination-overlay">
+                        <h3>אתונה, יוון</h3>
+                        <div class="destination-price">החל מ-<strong>$179</strong></div>
+                        <button class="btn btn-white btn-sm">הזמן עכשיו</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flights Section -->
+    <section class="section flights-section" id="flights">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">✈ טיסות</span>
+                <h2 class="section-title">טיסות זולות מתל אביב</h2>
+                <p class="section-subtitle">המחירים הכי טובים לטיסות יוצאות מנתב"ג</p>
+            </div>
+            <div class="flights-grid">
+                <div class="flight-card">
+                    <div class="flight-route">
+                        <div class="flight-city">
+                            <span class="city-code">TLV</span>
+                            <span class="city-name">תל אביב</span>
+                        </div>
+                        <div class="flight-path">
+                            <span class="flight-line"></span>
+                            <i class="fas fa-plane"></i>
+                            <span class="flight-duration">4:30</span>
+                        </div>
+                        <div class="flight-city">
+                            <span class="city-code">CDG</span>
+                            <span class="city-name">פריז</span>
+                        </div>
+                    </div>
+                    <div class="flight-details">
+                        <div class="flight-airline">
+                            <span class="airline-logo">AF</span>
+                            <span>Air France</span>
+                        </div>
+                        <div class="flight-info">
+                            <span><i class="fas fa-calendar-alt"></i> 15-22 מרץ</span>
+                            <span><i class="fas fa-suitcase"></i> ישיר</span>
+                        </div>
+                    </div>
+                    <div class="flight-price">
+                        <span class="price-from">החל מ-</span>
+                        <span class="price-amount">$299</span>
+                        <span class="price-person">לאדם</span>
+                        <button class="btn btn-primary btn-sm">הזמן</button>
+                    </div>
+                </div>
+
+                <div class="flight-card">
+                    <div class="flight-route">
+                        <div class="flight-city">
+                            <span class="city-code">TLV</span>
+                            <span class="city-name">תל אביב</span>
+                        </div>
+                        <div class="flight-path">
+                            <span class="flight-line"></span>
+                            <i class="fas fa-plane"></i>
+                            <span class="flight-duration">3:45</span>
+                        </div>
+                        <div class="flight-city">
+                            <span class="city-code">FCO</span>
+                            <span class="city-name">רומא</span>
+                        </div>
+                    </div>
+                    <div class="flight-details">
+                        <div class="flight-airline">
+                            <span class="airline-logo">LY</span>
+                            <span>El Al</span>
+                        </div>
+                        <div class="flight-info">
+                            <span><i class="fas fa-calendar-alt"></i> 10-17 אפריל</span>
+                            <span><i class="fas fa-suitcase"></i> ישיר</span>
+                        </div>
+                    </div>
+                    <div class="flight-price">
+                        <span class="price-from">החל מ-</span>
+                        <span class="price-amount">$199</span>
+                        <span class="price-person">לאדם</span>
+                        <button class="btn btn-primary btn-sm">הזמן</button>
+                    </div>
+                </div>
+
+                <div class="flight-card">
+                    <div class="flight-route">
+                        <div class="flight-city">
+                            <span class="city-code">TLV</span>
+                            <span class="city-name">תל אביב</span>
+                        </div>
+                        <div class="flight-path">
+                            <span class="flight-line"></span>
+                            <i class="fas fa-plane"></i>
+                            <span class="flight-duration">11:20</span>
+                        </div>
+                        <div class="flight-city">
+                            <span class="city-code">JFK</span>
+                            <span class="city-name">ניו יורק</span>
+                        </div>
+                    </div>
+                    <div class="flight-details">
+                        <div class="flight-airline">
+                            <span class="airline-logo">UA</span>
+                            <span>United Airlines</span>
+                        </div>
+                        <div class="flight-info">
+                            <span><i class="fas fa-calendar-alt"></i> 5-15 מאי</span>
+                            <span><i class="fas fa-exchange-alt"></i> עצירה אחת</span>
+                        </div>
+                    </div>
+                    <div class="flight-price">
+                        <span class="price-from">החל מ-</span>
+                        <span class="price-amount">$449</span>
+                        <span class="price-person">לאדם</span>
+                        <button class="btn btn-primary btn-sm">הזמן</button>
+                    </div>
+                </div>
+
+                <div class="flight-card">
+                    <div class="flight-route">
+                        <div class="flight-city">
+                            <span class="city-code">TLV</span>
+                            <span class="city-name">תל אביב</span>
+                        </div>
+                        <div class="flight-path">
+                            <span class="flight-line"></span>
+                            <i class="fas fa-plane"></i>
+                            <span class="flight-duration">3:10</span>
+                        </div>
+                        <div class="flight-city">
+                            <span class="city-code">ATH</span>
+                            <span class="city-name">אתונה</span>
+                        </div>
+                    </div>
+                    <div class="flight-details">
+                        <div class="flight-airline">
+                            <span class="airline-logo">W6</span>
+                            <span>Wizz Air</span>
+                        </div>
+                        <div class="flight-info">
+                            <span><i class="fas fa-calendar-alt"></i> 20-25 מרץ</span>
+                            <span><i class="fas fa-suitcase"></i> ישיר</span>
+                        </div>
+                    </div>
+                    <div class="flight-price">
+                        <span class="price-from">החל מ-</span>
+                        <span class="price-amount">$129</span>
+                        <span class="price-person">לאדם</span>
+                        <button class="btn btn-primary btn-sm">הזמן</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <button class="btn btn-outline btn-lg">צפה בכל הטיסות <i class="fas fa-arrow-left"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="section hotels-section" id="hotels">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🏨 מלונות</span>
+                <h2 class="section-title">מלונות מומלצים</h2>
+                <p class="section-subtitle">הנבחרים שלנו – מלונות ברמה הכי גבוהה במחירים הכי נמוכים</p>
+            </div>
+            <div class="hotels-grid">
+                <div class="hotel-card">
+                    <div class="hotel-image" style="background: linear-gradient(135deg, #667eea, #764ba2)">
+                        <div class="hotel-image-placeholder">🏨</div>
+                        <span class="hotel-badge">בחירת העורכים</span>
+                        <button class="hotel-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-location"><i class="fas fa-map-marker-alt"></i> פריז, צרפת</div>
+                        <h3 class="hotel-name">Le Grand Palais Hotel</h3>
+                        <div class="hotel-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="hotel-amenities">
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-swimming-pool"></i> בריכה</span>
+                            <span><i class="fas fa-spa"></i> ספא</span>
+                            <span><i class="fas fa-utensils"></i> מסעדה</span>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="rating-score">9.2</span>
+                            <span class="rating-text">מצוין</span>
+                            <span class="rating-count">(1,247 חוות דעת)</span>
+                        </div>
+                        <div class="hotel-price-row">
+                            <div class="hotel-price">
+                                <span class="price-old">$320</span>
+                                <span class="price-new">$219</span>
+                                <span class="price-night">/ ללילה</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm">הזמן</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-image" style="background: linear-gradient(135deg, #f093fb, #f5576c)">
+                        <div class="hotel-image-placeholder">🏰</div>
+                        <span class="hotel-badge hot">מבצע חם</span>
+                        <button class="hotel-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-location"><i class="fas fa-map-marker-alt"></i> רומא, איטליה</div>
+                        <h3 class="hotel-name">Roma Luxury Suites</h3>
+                        <div class="hotel-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <div class="hotel-amenities">
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-coffee"></i> ארוחת בוקר</span>
+                            <span><i class="fas fa-concierge-bell"></i> קונסיירז'</span>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="rating-score">8.8</span>
+                            <span class="rating-text">טוב מאוד</span>
+                            <span class="rating-count">(893 חוות דעת)</span>
+                        </div>
+                        <div class="hotel-price-row">
+                            <div class="hotel-price">
+                                <span class="price-old">$250</span>
+                                <span class="price-new">$159</span>
+                                <span class="price-night">/ ללילה</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm">הזמן</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
+                        <div class="hotel-image-placeholder">🌊</div>
+                        <button class="hotel-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="hotel-content">
+                        <div class="hotel-location"><i class="fas fa-map-marker-alt"></i> סנטוריני, יוון</div>
+                        <h3 class="hotel-name">Aegean Blue Resort</h3>
+                        <div class="hotel-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="hotel-amenities">
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-swimming-pool"></i> בריכת אינפיניטי</span>
+                            <span><i class="fas fa-umbrella-beach"></i> חוף פרטי</span>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="rating-score">9.5</span>
+                            <span class="rating-text">יוצא מן הכלל</span>
+                            <span class="rating-count">(2,104 חוות דעת)</span>
+                        </div>
+                        <div class="hotel-price-row">
+                            <div class="hotel-price">
+                                <span class="price-old">$450</span>
+                                <span class="price-new">$329</span>
+                                <span class="price-night">/ ללילה</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm">הזמן</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <button class="btn btn-outline btn-lg">צפה בכל המלונות <i class="fas fa-arrow-left"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="section deals-section" id="deals">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔥 מבצעים</span>
+                <h2 class="section-title">מבצעים חמים</h2>
+                <p class="section-subtitle">הזדמנויות שלא חוזרות – מוגבלות בזמן!</p>
+            </div>
+            <div class="deals-grid">
+                <div class="deal-card deal-featured">
+                    <div class="deal-timer">
+                        <i class="fas fa-clock"></i>
+                        <span>נגמר בעוד: </span>
+                        <span class="countdown" data-hours="23">23:59:45</span>
+                    </div>
+                    <div class="deal-content">
+                        <div class="deal-destination">
+                            <span class="deal-emoji">🏖️</span>
+                            <div>
+                                <h3>חבילת קנקון, מקסיקו</h3>
+                                <p>7 לילות, הכל כלול, 5 כוכבים</p>
+                            </div>
+                        </div>
+                        <div class="deal-includes">
+                            <span><i class="fas fa-plane"></i> טיסה</span>
+                            <span><i class="fas fa-hotel"></i> מלון</span>
+                            <span><i class="fas fa-utensils"></i> הכל כלול</span>
+                            <span><i class="fas fa-shuttle-van"></i> העברות</span>
+                        </div>
+                        <div class="deal-pricing">
+                            <div class="deal-old-price">$2,499</div>
+                            <div class="deal-new-price">$1,699</div>
+                            <div class="deal-savings">חסכון של $800!</div>
+                        </div>
+                        <button class="btn btn-primary btn-lg">תפסו את המבצע!</button>
+                    </div>
+                </div>
+
+                <div class="deal-card deal-small">
+                    <div class="deal-badge">-40%</div>
+                    <span class="deal-emoji">🗼</span>
+                    <h4>פריז סופ"ש</h4>
+                    <p>3 לילות + טיסה</p>
+                    <div class="deal-new-price">$599</div>
+                    <button class="btn btn-primary btn-sm">הזמן</button>
+                </div>
+
+                <div class="deal-card deal-small">
+                    <div class="deal-badge">-35%</div>
+                    <span class="deal-emoji">🎭</span>
+                    <h4>לונדון תרבות</h4>
+                    <p>4 לילות + טיסה</p>
+                    <div class="deal-new-price">$749</div>
+                    <button class="btn btn-primary btn-sm">הזמן</button>
+                </div>
+
+                <div class="deal-card deal-small">
+                    <div class="deal-badge">-50%</div>
+                    <span class="deal-emoji">🌅</span>
+                    <h4>דובאי חלום</h4>
+                    <p>5 לילות + טיסה</p>
+                    <div class="deal-new-price">$899</div>
+                    <button class="btn btn-primary btn-sm">הזמן</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section why-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">למה אנחנו?</span>
+                <h2 class="section-title">למה לבחור ב-SkyVoyage?</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>המחירים הכי טובים</h3>
+                    <p>התחייבות למחיר הנמוך ביותר. מצאתם זול יותר? נשווה מחיר!</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <h3>הזמנה מאובטחת</h3>
+                    <p>תשלום מאובטח ב-SSL, אפשרות ביטול חינם עד 48 שעות לפני</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📞</div>
+                    <h3>שירות 24/7</h3>
+                    <p>צוות תמיכה בעברית זמין לכם בכל שעה, בכל יום</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⭐</div>
+                    <h3>חוויה מושלמת</h3>
+                    <p>98% מהלקוחות שלנו ממליצים עלינו לחברים ולמשפחה</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">⭐ חוות דעת</span>
+                <h2 class="section-title">מה הלקוחות שלנו אומרים</h2>
+            </div>
+            <div class="reviews-slider">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"הזמנתי חבילה לפריז דרך SkyVoyage וזו הייתה החופשה הכי מוצלחת שלנו! מחיר מדהים, מלון מרכזי ושירות מעולה."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">מ</div>
+                            <div>
+                                <strong>מיכל כהן</strong>
+                                <span>פריז, מרץ 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"מצאתי טיסה לניו יורק ב-$399 הלוך חזור! לא האמנתי שזה אמיתי אבל הכל עבד בצורה חלקה. אתר מומלץ בחום!"</p>
+                        <div class="review-author">
+                            <div class="author-avatar">ד</div>
+                            <div>
+                                <strong>דניאל לוי</strong>
+                                <span>ניו יורק, פברואר 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"שירות הלקוחות פה הוא פשוט ברמה אחרת. היה לי שינוי בטיסה והם טיפלו בהכל בזמן אמת. תודה רבה!"</p>
+                        <div class="review-author">
+                            <div class="author-avatar">ש</div>
+                            <div>
+                                <strong>שרה אברהם</strong>
+                                <span>ברצלונה, ינואר 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★☆</div>
+                        <p class="review-text">"הזמנו חופשה משפחתית ליוון - מלון מהמם עם בריכה, הילדים נהנו מאוד. המחיר היה מצוין ביחס לאיכות."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">א</div>
+                            <div>
+                                <strong>אלון ישראלי</strong>
+                                <span>סנטוריני, דצמבר 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews-nav">
+                    <button class="review-nav-btn" id="prevReview"><i class="fas fa-arrow-right"></i></button>
+                    <button class="review-nav-btn" id="nextReview"><i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <span class="newsletter-emoji">✉️</span>
+                    <h2>קבלו מבצעים ישירות למייל!</h2>
+                    <p>הירשמו לניוזלטר שלנו וקבלו הנחה של 10% על ההזמנה הראשונה</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="הכניסו את כתובת המייל שלכם">
+                        <button class="btn btn-primary">הירשמו עכשיו</button>
+                    </div>
+                    <span class="newsletter-note">🔒 לא נשלח ספאם, רק מבצעים שווים!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📞 צור קשר</span>
+                <h2 class="section-title">דברו איתנו</h2>
+                <p class="section-subtitle">הצוות שלנו כאן בשבילכם 24/7</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>טלפון</h4>
+                            <p>1-800-SKY-VOYAGE</p>
+                            <p>03-1234567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>מייל</h4>
+                            <p>info@skyvoyage.co.il</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4>וואטסאפ</h4>
+                            <p>050-1234567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>כתובת</h4>
+                            <p>רחוב הרצל 100, תל אביב</p>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <div class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>שם מלא</label>
+                                <input type="text" placeholder="ישראל ישראלי">
+                            </div>
+                            <div class="form-group">
+                                <label>טלפון</label>
+                                <input type="tel" placeholder="050-0000000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>מייל</label>
+                            <input type="email" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>נושא</label>
+                            <select>
+                                <option>הזמנת טיסה</option>
+                                <option>הזמנת מלון</option>
+                                <option>חבילת נופש</option>
+                                <option>שינוי/ביטול הזמנה</option>
+                                <option>אחר</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>הודעה</label>
+                            <textarea rows="4" placeholder="ספרו לנו במה נוכל לעזור..."></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-lg">שלח הודעה <i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">✈</span>
+                        <span class="logo-text">Sky<span class="highlight">Voyage</span></span>
+                    </a>
+                    <p>הדרך הטובה ביותר למצוא טיסות זולות ומלונות מפנקים לחו"ל. מאז 2018 אנחנו עוזרים לאלפי ישראלים לטוס בזול.</p>
+                    <div class="footer-trust">
+                        <span>🔒 אתר מאובטח</span>
+                        <span>✅ רישיון סוכן נסיעות</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>טיסות</h4>
+                    <ul>
+                        <li><a href="#">טיסות לאירופה</a></li>
+                        <li><a href="#">טיסות לארה"ב</a></li>
+                        <li><a href="#">טיסות למזרח</a></li>
+                        <li><a href="#">טיסות זולות</a></li>
+                        <li><a href="#">טיסות דקה 90</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>מלונות</h4>
+                    <ul>
+                        <li><a href="#">מלונות בפריז</a></li>
+                        <li><a href="#">מלונות ברומא</a></li>
+                        <li><a href="#">מלונות בלונדון</a></li>
+                        <li><a href="#">מלונות בברצלונה</a></li>
+                        <li><a href="#">כל המלונות</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>SkyVoyage</h4>
+                    <ul>
+                        <li><a href="#">אודות</a></li>
+                        <li><a href="#">תנאי שימוש</a></li>
+                        <li><a href="#">מדיניות פרטיות</a></li>
+                        <li><a href="#">שאלות נפוצות</a></li>
+                        <li><a href="#">דרושים</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SkyVoyage. כל הזכויות שמורות.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-apple-pay"></i>
+                    <i class="fab fa-google-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- WhatsApp Float -->
+    <a href="#" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
